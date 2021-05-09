@@ -1,1 +1,0 @@
-https://itnext.io/test-driven-development-101-with-jest-a6e666d090a5
