@@ -1,8 +1,14 @@
 // Packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+const Manager = require("./lib/Manager")
+const Engineer = require("./lib/Engineer")
+const Intern = require("./lib/Intern");
+const Employee = require("./lib/Employee")
 
-// Questions array containing question object
+// Need empty array to push objects to = []
+
+// Team Member Role
 const teamMemberRole = [
   {
     type: "list",
@@ -12,10 +18,6 @@ const teamMemberRole = [
   },
 ];
 
-  // If manager chosen go to manager 
-  // If engineer chosen go to engineer 
-  // If intern chosen go to intern
-
   createTeamMember()
 
   function createTeamMember() {
@@ -24,7 +26,7 @@ const teamMemberRole = [
         console.log("Manager role chosen");
         teamMemberManager();
       }
-      if (answers.role === 'Engineer') {
+      else if (answers.role === 'Engineer') {
         console.log("Engineer role chosen");
         teamMemberEngineer();
       } else {
@@ -36,9 +38,14 @@ const teamMemberRole = [
 function teamMemberManager() {
   inquirer.prompt(manager).then((answers) => {
     console.log(JSON.stringify(answers, null, ' '));
-    }
+  if (answers.add === true) { 
+    createTeamMember()
+  } else {
+    const manager = new Manager(answer.name, answer.id, answer.email, answer.school) 
+    Employee.push(manager) 
+  }
+  }
   )};
-
 
 const manager = [
   {
@@ -65,19 +72,18 @@ const manager = [
     type: "confirm",
     name: "add",
     message: "Would you like to add another team member?",
-    // if (answers.name === 'true') {
-    //     console.log("a")
-    //      // If user would like to add another team member do something 
-    // } else {
-    //     console.log("b")
-    //       // Else append information to file 
-    // }
   },
 ];
 
 function teamMemberEngineer() {
   inquirer.prompt(engineer).then((answers) => {
-    console.log(JSON.stringify(answers, null, ' '));
+    if (answers.add === true) { 
+      createTeamMember()
+    } else {
+      console.log(JSON.stringify(answers, null, ' '));
+      const engineer = new Engineer(answer.name, answer.id, answer.email, answer.school) 
+      Employee.push(engineer) 
+    }
     }
   )};
 
@@ -101,18 +107,13 @@ const engineer = [
     type: "confirm",
     name: "add",
     message: "Would you like to add another team member?",
-    // if (answers.name === 'true') {
-    //     console.log("a")
-    //      // If user would like to add another team member do something 
-    // } else {
-    //     console.log("All done")
-    //       // Else append information to file 
-    // }
   },
 ];
 
 function teamMemberIntern() {
   inquirer.prompt(intern).then((answers) => {
+    const intern = new Intern(answer.name, answer.id, answer.email, answer.school) 
+    Employee.push(intern)
     console.log(JSON.stringify(answers, null, ' '));
     }
   )};
@@ -138,13 +139,6 @@ const intern = [
     type: "confirm",
     name: "add",
     message: "Would you like to add another team member?",
-    // if (answers.name === 'true') {
-    //     console.log("a")
-    //      // If user would like to add another team member do something 
-    // } else {
-    //     console.log("All done")
-    //       // Else append information to file 
-    // }
   },
 ];
 
