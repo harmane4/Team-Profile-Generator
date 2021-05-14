@@ -61,7 +61,7 @@ function generateManagerCard(manager) {
    <li>ID: ${manager.id}</li>
  </div>
    <div class="box">
-     <li>Email: ${manager.email}</li>
+   <li>Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
    </div>
    <div class="box">
      <li>Office Number: ${manager.getOfficeNumber()}</li>
@@ -85,7 +85,7 @@ function generateEngineerCard(engineer) {
     <li>ID: ${engineer.id}</li>
   </div>
     <div class="box">
-      <li>Email: ${engineer.email}</li>
+    <li>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
     </div>
     <div class="box">
       <li>GitHub: ${engineer.getGitHub()}</li>
@@ -108,10 +108,10 @@ function generateInternCard(intern) {
     <li>ID: ${intern.id}</li>
   </div>
     <div class="box">
-      <li>Email: ${intern.email}</li>
+      <li>Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
     </div>
     <div class="box">
-      <li>School: ${intern.getSchool()}</li>
+      <li>School:  ${intern.getSchool()}</li>
     </div>
   </ul>
  </div>
