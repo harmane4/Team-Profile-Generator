@@ -19,11 +19,11 @@ function generateTeamMemberCards(employee) {
             </div>
           </section>
     
-          <div class="column is-one-third is-multiline">
-            <div class="box">
+          <section>
+          <div class="columns is-multiline">
             ${generateTeamMemberCard(employee)}
-            </div>
           </div>
+            </section>
     </body>
     </html>`
 }
@@ -48,29 +48,35 @@ function generateTeamMemberCard(employee) {
 }
 
 function generateManagerCard(manager) {
-   return ` <ul>
-            <div class="box">
-            <li>${manager.name}</li>
-            <br>
-            <li>${manager.getRole()}</li>
-          </div>
-          <div class="box">
-            <li>ID: ${manager.id}</li>
-          </div>
-            <div class="box">
-              <li>Email: ${manager.email}</li>
-            </div>
-            <div class="box">
-              <li>Office Number: ${manager.getOfficeNumber()}</li>
-            </div>
-          </ul>
-        </div>
-      </div>`
+   return `
+   <div class="column is-one-third">
+   <div class="box">
+    <ul>
+   <div class="box has-background-danger">
+   <li>${manager.name}</li>
+   <br>
+   <li>${manager.getRole()}</li>
+ </div>
+ <div class="box">
+   <li>ID: ${manager.id}</li>
+ </div>
+   <div class="box">
+     <li>Email: ${manager.email}</li>
+   </div>
+   <div class="box">
+     <li>Office Number: ${manager.getOfficeNumber()}</li>
+   </div>
+ </ul>
+</div>
+</div> `
+   
 }
 
 function generateEngineerCard(engineer) {
-    return ` <ul>
+    return `<div class="column is-one-third">
     <div class="box">
+     <ul>
+    <div class="box has-background-success">
     <li>${engineer.name}</li>
     <br>
     <li>${engineer.getRole()}</li>
@@ -82,32 +88,34 @@ function generateEngineerCard(engineer) {
       <li>Email: ${engineer.email}</li>
     </div>
     <div class="box">
-      <li>Github: ${engineer.getGitHub()}</li>
+      <li>GitHub: ${engineer.getGitHub()}</li>
     </div>
   </ul>
-</div>
-</div>`
+ </div>
+ </div> `
 }
 
 function generateInternCard(intern) {
-    return `<ul>
+    return `<div class="column is-one-third">
     <div class="box">
+     <ul>
+    <div class="box has-background-primary">
     <li>${intern.name}</li>
     <br>
     <li>${intern.getRole()}</li>
   </div>
   <div class="box">
-    <li>ID:${intern.id}</li>
+    <li>ID: ${intern.id}</li>
   </div>
     <div class="box">
-      <li>Email:${intern.email}</li>
+      <li>Email: ${intern.email}</li>
     </div>
     <div class="box">
-      <li>School:${intern.getSchool()}</li>
+      <li>School: ${intern.getSchool()}</li>
     </div>
   </ul>
-</div>
-</div>`
+ </div>
+ </div> `
 }
 
 
