@@ -1,7 +1,6 @@
 const Employee = require("../lib/Employee");
 
 describe("Employee", () => {
-    // Error Handling 
  
     // Employee Object
     it("Can generate a new employee object with the name of id, name and email" , () => {
@@ -19,7 +18,7 @@ describe("Employee", () => {
         expect(employeeId).toEqual(1);
     });
 
-   // Employee ID
+   // Employee Name
    it("Generate employee name when getName() is invoked" , () => {
     const employee = new Employee(1, "Bob D",  "bob@emloyee.net.au");
     const employeeName = employee.getName();
@@ -33,9 +32,15 @@ describe("Employee", () => {
     expect(employeeEmail).toEqual("bob@emloyee.net.au");
 });
     // Employee 
-    it("Generate employee when getRole() is invoked" , () => {
+    it("Generate employee role when getRole() is invoked" , () => {
         const employee = new Employee(1, "Bob D",  "bob@emloyee.net.au");
         const employeeRole = employee.getRole();
         expect(employeeRole).toEqual("Employee");
     });
+    
+    //TO DO:
+    // Throws an error when ID not a number 
+    // Throws an error when name is not a string
+    // Throws an error when email is not a string 
+    // Throws an error when ID, name and email are undefined 
 });
