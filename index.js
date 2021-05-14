@@ -6,7 +6,7 @@ const Intern = require("./lib/Intern");
 const generateTeam = require("./src/generateTeam")
 const fs = require("fs")
 
-let employee = [];
+let employees = [];
 
 const teamMemberRole = [
   {
@@ -39,7 +39,7 @@ function teamMemberManager() {
       answers.email,
       answers.officeNumber
     );
-    employee.push(manager);
+    employees.push(manager);
     console.log(JSON.stringify(answers, null, " "));
     if (answers.add === true) {
       createTeamMember();
@@ -85,7 +85,7 @@ function teamMemberEngineer() {
       answers.email,
       answers.github
     );
-    employee.push(engineer);
+    employees.push(engineer);
     console.log(JSON.stringify(answers, null, " "));
     if (answers.add === true) {
       createTeamMember();
@@ -132,7 +132,7 @@ function teamMemberIntern() {
       answers.email,
       answers.school
     );
-    employee.push(intern);
+    employees.push(intern);
     console.log(JSON.stringify(answers, null, " "));
     if (answers.add === true) {
       createTeamMember();
@@ -171,7 +171,7 @@ const intern = [
 ];
 
 function teamComplete() {
-  let completedTemplate = generateTeam(employee)
+  let completedTemplate = generateTeam(employees)
 fs.writeFile("employeeTeam.html" , completedTemplate, (err) =>
 err ? console.log(err) : console.log("Team generated")) 
 }
