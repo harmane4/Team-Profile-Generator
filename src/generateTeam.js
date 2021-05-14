@@ -32,7 +32,6 @@ function generateTeamMemberCard(employee) {
    
   return employee.map(function(e) {
    let role = e.getRole()
-   console.log("role" , role)
     switch (role) {
       case "Manager":
         return generateManagerCard(e)
@@ -69,7 +68,6 @@ function generateManagerCard(manager) {
  </ul>
 </div>
 </div> `
-   
 }
 
 function generateEngineerCard(engineer) {
@@ -85,7 +83,7 @@ function generateEngineerCard(engineer) {
     <li>ID: ${engineer.id}</li>
   </div>
     <div class="box">
-    <li>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
+    <li>Email: <a href="mailto:${engineer.email}" target="_blank">${engineer.email}</a></li>
     </div>
     <div class="box">
     <li>GitHub: <a href="${engineer.getGitHub()}">${engineer.getGitHub()}</a></li>
