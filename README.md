@@ -14,6 +14,8 @@
   - Jest
   - Bulma
 
+  Preview of an example team:
+
 
    ![Image of Final Product](assets/images/teamProfile.png)
   
