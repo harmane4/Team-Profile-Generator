@@ -1,5 +1,5 @@
 
-function generateTeamMemberCards(employee) {
+function generateTeamMemberCards(employees) {
    return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -21,16 +21,16 @@ function generateTeamMemberCards(employee) {
     
           <section>
           <div class="columns is-multiline">
-            ${generateTeamMemberCard(employee)}
+            ${generateTeamMemberCard(employees)}
           </div>
             </section>
     </body>
     </html>`
 }
 
-function generateTeamMemberCard(employee) {
+function generateTeamMemberCard(employees) {
    
-  return employee.map(function(e) {
+  return employees.map(function(e) {
    let role = e.getRole()
     switch (role) {
       case "Manager":
