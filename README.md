@@ -1,4 +1,4 @@
-# Sample README
+# Team Profile Generator
   ![license](https://img.shields.io/badge/License-MIT-blue.svg)
   
   ## Description 
@@ -38,7 +38,7 @@
 
   To run the application, navigate to the index.js file in the command line and invoke the command `index.js` in your terminal.
 
-  To invoke the tests simple run the command `npm test` in your terminal. 
+  To invoke the tests simply run the command `npm test` in your terminal. 
   
 
   ## Video Demonstration 
