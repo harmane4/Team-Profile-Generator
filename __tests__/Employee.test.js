@@ -38,9 +38,45 @@ describe("Employee", () => {
         expect(employeeRole).toEqual("Employee");
     });
     
-    //TO DO:
-    // Throws an error when ID not a number 
-    // Throws an error when name is not a string
-    // Throws an error when email is not a string 
-    // Throws an error when ID, name and email are undefined 
+    // Error Handling
+    it("Throws an error when id is not a number but a string" , () => {
+        expect(() => {
+            new Employee("Not a number");
+        }).toThrow("Employee id must be a number, please re-enter");
+    });
+
+    // Error Handling
+    it("Throws an error when name is a number not a string" , () => {
+        expect(() => {
+            new Employee(1, Number);
+        }).toThrow("Employee name must be a string, please re-enter");
+    });
+
+    // Error Handling
+    it("Throws an error when email is an empty string" , () => {
+        expect(() => {
+            new Employee(1, "Bob" , "");
+        }).toThrow("You must enter an email address");
+    });
+
+    // Error Handling
+    it("Throws an error when id is undefined" , () => {
+        expect(() => {
+            new Employee();
+        }).toThrow("Employee id must be a number, please re-enter");
+    });
+
+    // Error Handling
+    it("Throws an error when name is undefined" , () => {
+        expect(() => {
+            new Employee(1, );
+        }).toThrow("Employee name must be a string, please re-enter");
+    });
+
+    // Error Handling
+    it("Throws an error when email is undefined" , () => {
+        expect(() => {
+            new Employee(1,"bob" , );
+        }).toThrow("You must enter an email address");
+    });
 });
