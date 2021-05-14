@@ -6,11 +6,8 @@ const Intern = require("./lib/Intern");
 const generateTeam = require("./src/generateTeam")
 const fs = require("fs")
 
-// Need empty array to push objects to = []
-var employee = [];
-console.log("hello", employee);
+let employee = [];
 
-// Team Member Role
 const teamMemberRole = [
   {
     type: "list",
@@ -42,9 +39,7 @@ function teamMemberManager() {
       answers.email,
       answers.officeNumber
     );
-    console.log(manager);
     employee.push(manager);
-    console.log("push", employee);
     console.log(JSON.stringify(answers, null, " "));
     if (answers.add === true) {
       createTeamMember();
@@ -84,16 +79,13 @@ const manager = [
 
 function teamMemberEngineer() {
   inquirer.prompt(engineer).then((answers) => {
-    console.log(JSON.stringify(answers, null, " "));
     const engineer = new Engineer(
       answers.id,
       answers.name,
       answers.email,
       answers.github
     );
-    console.log(engineer);
     employee.push(engineer);
-    console.log("eng", employee);
     console.log(JSON.stringify(answers, null, " "));
     if (answers.add === true) {
       createTeamMember();
@@ -118,7 +110,7 @@ const engineer = [
   {
     type: "input",
     name: "email",
-    message: "Please enter engineer's email::",
+    message: "Please enter engineer's email:",
   },
   {
     type: "input",
@@ -140,9 +132,7 @@ function teamMemberIntern() {
       answers.email,
       answers.school
     );
-    console.log(intern);
     employee.push(intern);
-    console.log("int", employee);
     console.log(JSON.stringify(answers, null, " "));
     if (answers.add === true) {
       createTeamMember();
@@ -182,8 +172,7 @@ const intern = [
 
 function teamComplete() {
   let completedTemplate = generateTeam(employee)
-console.log(completedTemplate)
-fs.writeFile("employee.html" , completedTemplate, (err) =>
-err ? console.log(err) : console.log("Team generated")) // Write to HTML
+fs.writeFile("employeeTeam.html" , completedTemplate, (err) =>
+err ? console.log(err) : console.log("Team generated")) 
 }
 
