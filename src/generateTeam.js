@@ -88,7 +88,7 @@ function generateEngineerCard(engineer) {
     <li>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
     </div>
     <div class="box">
-      <li>GitHub: ${engineer.getGitHub()}</li>
+    <li>GitHub: <a href="${engineer.getGitHub()}">${engineer.getGitHub()}</a></li>
     </div>
   </ul>
  </div>
